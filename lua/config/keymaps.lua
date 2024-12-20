@@ -75,5 +75,12 @@ vim.keymap.set("v", "<C-S-/>", "gc", { remap = true, desc = "Toggle comment in s
 -- Shift + Delete in insert mode: exit to normal mode, delete the line, and re-enter insert mode
 vim.keymap.set("i", "<S-Del>", "<Esc>ddi", { desc = "Delete line and stay in insert mode" })
 
--- Example for copilot.nvim in init.lua
-vim.api.nvim_set_keymap("n", "<C-i>", "<Space>aq", { noremap = true, silent = true })
+-- Remap Ctrl+r to redo
+vim.keymap.set("n", "<C-r>", "<C-R>", { desc = "Redo with Ctrl+r" })
+
+vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>", { desc = "Open Diffview" })
+vim.keymap.set("n", "<leader>gq", ":DiffviewClose<CR>", { desc = "Close Diffview" })
+vim.keymap.set("n", "<leader>gf", ":DiffviewToggleFiles<CR>", { desc = "Toggle Diffview Files Panel" })
+vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Diffview Files Panel" })
+
+vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
