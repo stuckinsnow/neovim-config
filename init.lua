@@ -1,4 +1,4 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
+--- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
 -- vim.g.catppuccin_flavour = "mocha"
@@ -8,24 +8,13 @@ vim.opt.clipboard = "unnamedplus"
 
 require("tokyonight").setup({
   style = "moon",
-  on_colors = function(colors)
-    colors.fg_gutter = "#2b2b2b"
-  end,
   on_highlights = function(hl)
-    -- hl.LineNrAbove = {
-    --   fg = "#f7768e",
-    -- }
-    -- hl.LineNrBelow = {
-    --   fg = "#7aa2f7",s
-    -- }
-
     hl.LineNrAbove = {
-      fg = "#9d7cd8", -- TokyoNight purple
+      fg = "#6ab8ff",
     }
     hl.LineNrBelow = {
-      fg = "#9ece6a", -- TokyoNight green
+      fg = "#ff6188",
     }
-
   end,
 })
 
@@ -44,14 +33,22 @@ require("blink.cmp").setup({
     },
     completeopt = "menu,menuone,noinsert",
   },
-  keymap = {
-    ---@diagnostic disable-next-line: assign-type-mismatch
-    preset = "default",
-    ["<C-j>"] = { "select_next", "fallback" },
-    ["<C-k>"] = { "select_prev", "fallback" },
-    ["<C-l>"] = { "select_and_accept" },
-    ["<Tab>"] = { "select_and_accept" }, 
-    ["<C-y>"] = { "select_and_accept" },
-    ["<CR>"] = nil, 
-  },
 })
+
+vim.opt.fileformats = { "unix" }
+
+-- Set tab size to 4 spaces
+-- vim.opt.tabstop = 4 -- Number of spaces a tab represents
+-- vim.opt.shiftwidth = 4 -- Number of spaces to use for indentation
+-- vim.opt.softtabstop = 4 -- How many spaces to insert when hitting <Tab>
+-- vim.opt.expandtab = true -- Convert tabs to spaces
+-- vim.opt.smarttab = true -- Use smart tabbing
+
+vim.g["prettier#config#config"] = {
+  printWidth = 800, -- Allow longer lines before wrapping
+  jsxBracketSameLine = true, -- Keep the closing bracket of JSX on the same line
+  importOrderSeparation = false, -- Keep imports on the same line
+  endOfLine = "auto", -- Force LF line endings
+  noTrailingWhitespace = true, -- Prevent trailing whitespace trimming
+  wrapAttributes = "auto",
+}

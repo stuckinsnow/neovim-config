@@ -84,3 +84,5 @@ vim.keymap.set("n", "<leader>gf", ":DiffviewToggleFiles<CR>", { desc = "Toggle D
 vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Diffview Files Panel" })
 
 vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
+
+vim.api.nvim_set_keymap("n", "<F10>", ":Dashboard<CR>", { noremap = true, silent = true })
