@@ -26,14 +26,14 @@ require("gitsigns").setup({
   current_line_blame = true, -- Enable blame on the current line by default
 })
 
-require("blink.cmp").setup({
-  completion = {
-    ghost_text = {
-      enabled = false, -- Disable ghost text
-    },
-    completeopt = "menu,menuone,noinsert",
-  },
-})
+-- require("blink.cmp").setup({
+--   completion = {
+--     ghost_text = {
+--       enabled = false, -- Disable ghost text
+--     },
+--     completeopt = "menu,menuone,noinsert",
+--   },
+-- })
 
 vim.opt.fileformats = { "unix" }
 
