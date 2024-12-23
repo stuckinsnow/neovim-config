@@ -2,14 +2,15 @@ local IS_DEV = false -- Flag to determine if the environment is development
 
 -- Table containing various prompt templates for Copilot Chat
 local prompts = {
-  Efficiency = "> /COPILOT_GENERATE\n\nThere are potentially more efficient ways to write this code. Please provide one alternative.",
-  Concerns = "> /COPILOT_GENERATE\n\nThere are potentially concerns with this code e.g. efficiency or security, etc. Please label them in a concise way, and mention alternatives. If it involves algorithms, please mention alternative more efficient algorithms or functions from a speed perspective. Include the line numbers for each",
-  Fix = "> /COPILOT_GENERATE\n\nPlease fix the following code.",
-  Comments = "> /COPILOT_GENERATE\n\nPlease provide comments for the following code. Include a block at the top, with a brief explanation and smaller comments by functions. Do not assume the reader ras common sense but do assume they are intelligent.",
-  Explain = "Please explain how the following code works.",
-  Review = "Please review the following code and provide suggestions for improvement.",
-  -- Tests = "Please explain how the selected code works, then generate unit tests for it.",
   BetterNamings = "Please provide better names for the following variables and functions.",
+  Comments = "> /COPILOT_GENERATE\n\nPlease provide comments for the following code. Include a block at the top, with a brief explanation and smaller comments by functions.",
+  Concerns = "> /COPILOT_GENERATE\n\nThere are potentially concerns with this code e.g. efficiency or security, etc. Please label them in a concise way, and mention alternatives. If it involves algorithms, please mention alternative more efficient algorithms or functions from a speed perspective. Include the line numbers for each.",
+  Concise = "> /COPILOT_GENERATE\n\nPlease make the selected code more concise e.g. turn into a ternary or switch statement.",
+  Efficiency = "> /COPILOT_GENERATE\n\nThere are potentially more efficient ways to write this code. Please provide one alternative.",
+  Explain = "Please explain how the following code works.",
+  Fix = "> /COPILOT_GENERATE\n\nPlease fix the following code.",
+  -- Tests = "Please explain how the selected code works, then generate unit tests for it.",
+  Review = "Please review the following code and provide suggestions for improvement.",
 }
 
 -- Return a table configuring the Copilot Chat plugin
@@ -38,6 +39,7 @@ return {
     keys = { -- Key mappings for various Copilot Chat commands
       { "<leader>ae", "<cmd>CopilotChatExplain<cr>", desc = "CopilotChat - Explain code" },
       -- { "<leader>at", "<cmd>CopilotChatTests<cr>", desc = "CopilotChat - Generate tests" },
+      { "<leader>ac", "<cmd>CopilotChatConcise<cr>", desc = "CopilotChat - Make code concise" },
       { "<leader>ar", "<cmd>CopilotChatReview<cr>", desc = "CopilotChat - Review code" },
       { "<leader>af", "<cmd>CopilotChatFix<cr>", desc = "CopilotChat - Fix code" },
       { "<leader>an", "<cmd>CopilotChatBetterNamings<cr>", desc = "CopilotChat - Better Naming" },
