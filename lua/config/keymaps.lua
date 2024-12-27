@@ -23,17 +23,17 @@ local function close_windows_except_current_and_neotree()
 end
 
 -- F1: Close all windows except the current one and NeoTree
-map("n", "<F1>", "", {
+map("n", "<F2>", "", {
   noremap = true,
   silent = true,
   callback = close_windows_except_current_and_neotree,
 })
 
 -- F2: Split the window vertically
-map("n", "<F2>", ":vsplit<CR>", opts)
+map("n", "<F3>", ":vsplit<CR>", opts)
 
 -- F3: Split the window horizontally
-map("n", "<F3>", ":split<CR>", opts)
+map("n", "<F4>", ":split<CR>", opts)
 
 -- Move line up (Alt + Up Arrow)
 vim.api.nvim_set_keymap("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = true })
