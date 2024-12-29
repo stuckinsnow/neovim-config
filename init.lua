@@ -31,7 +31,6 @@ require("catppuccin").setup({
 
 -- Load the Catppuccin theme
 -- vim.cmd.colorscheme("catppuccin")
-
 -- Load the tokyonight theme
 vim.cmd.colorscheme("tokyonight")
 

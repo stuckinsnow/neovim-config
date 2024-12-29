@@ -16,16 +16,16 @@ local rainbow_colors = {
 
 -- Define the highlights for the digit ranges
 local digit_highlights_ranges = {
-  { fg = colors.red }, -- 1-10
-  { fg = colors.peach }, -- 11-20
-  { fg = colors.yellow }, -- 21-30
-  { fg = colors.green }, -- 31-40
-  { fg = colors.blue }, -- 41-50
-  { fg = colors.teal }, -- 51-60
-  { fg = colors.flamingo }, -- 61-70
-  { fg = colors.lavender }, -- 71-80
-  { fg = colors.pink }, -- 81-90
-  { fg = colors.surface2 }, -- 91-100
+  { fg = colors.red },
+  { fg = colors.red },
+  { fg = colors.peach },
+  { fg = colors.yellow },
+  { fg = colors.green },
+  { fg = colors.blue },
+  { fg = colors.teal },
+  { fg = colors.lavender },
+  { fg = colors.surface2 },
+  { fg = colors.flamingo },
 }
 
 -- Apply highlights for each color range
@@ -87,6 +87,11 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
+    if vim.bo.filetype == "copilot-chat" then
+      vim.opt_local.relativenumber = false
+      vim.opt_local.number = false
+      vim.opt_local.statuscolumn = "%l"
+    end
     if vim.bo.filetype ~= "neo-tree" then
       vim.opt_local.statuscolumn = "%s%{%v:lua.StatusColumn()%}"
     else
@@ -107,7 +112,11 @@ vim.api.nvim_create_autocmd("WinEnter", {
 
 vim.api.nvim_create_autocmd("WinLeave", {
   callback = function()
-    if vim.bo.filetype ~= "neo-tree" then
+    if vim.bo.filetype == "copilot-chat" then
+      vim.opt_local.relativenumber = false
+      vim.opt_local.number = false
+      vim.opt_local.statuscolumn = "%l"
+    elseif vim.bo.filetype ~= "neo-tree" then
       vim.opt_local.relativenumber = false
       vim.opt_local.number = true
       vim.opt_local.statuscolumn = "%s%l"

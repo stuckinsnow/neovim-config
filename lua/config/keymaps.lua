@@ -84,8 +84,6 @@ vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Dif
 
 vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
 
-vim.api.nvim_set_keymap("n", "<F10>", ":Dashboard<CR>", { noremap = true, silent = true })
-
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
