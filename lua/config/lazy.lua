@@ -43,26 +43,43 @@ require("lazy").setup({
     {
       "neovim/nvim-lspconfig",
       opts = {
-        inlay_hints = { enabled = false },
+        inlay_hints = { enabled = true },
       },
     },
-    -- {
-    --   "NeogitOrg/neogit",
-    --   dependencies = {
-    --     "nvim-lua/plenary.nvim", -- required
-    --     "sindrets/diffview.nvim", -- optional - Diff integration
-    --
-    --     -- Only one of these is needed.
-    --     "nvim-telescope/telescope.nvim", -- optional
-    --     "ibhagwan/fzf-lua", -- optional
-    --     "echasnovski/mini.pick", -- optional
-    --   },
-    --   config = true,
-    -- },
+    {
+      "NeogitOrg/neogit",
+      dependencies = {
+        "nvim-lua/plenary.nvim", -- required
+        "sindrets/diffview.nvim", -- optional - Diff integration
+
+        -- Only one of these is needed.
+        "nvim-telescope/telescope.nvim", -- optional
+        "ibhagwan/fzf-lua", -- optional
+        "echasnovski/mini.pick", -- optional
+      },
+      config = true,
+    },
     {
       "sindrets/diffview.nvim",
       cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
     },
+    -- {
+    --   "neovim/nvim-lspconfig",
+    --   opts = {
+    --     servers = { eslint = {} },
+    --     setup = {
+    --       eslint = function()
+    --         require("lazyvim.util").lsp.on_attach(function(client)
+    --           if client.name == "eslint" then
+    --             client.server_capabilities.documentFormattingProvider = true
+    --           elseif client.name == "tsserver" then
+    --             client.server_capabilities.documentFormattingProvider = false
+    --           end
+    --         end)
+    --       end,
+    --     },
+    --   },
+    -- },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
