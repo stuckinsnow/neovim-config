@@ -34,12 +34,12 @@ require("lazy").setup({
         -- Emmet-vim configuration (if necessary)
       end,
     },
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        timeout = 10000,
-      },
-    },
+    -- {
+    --   "rcarriga/nvim-notify",
+    --   opts = {
+    --     timeout = 10000,
+    --   },
+    -- },
     {
       "neovim/nvim-lspconfig",
       opts = {
@@ -63,23 +63,6 @@ require("lazy").setup({
       "sindrets/diffview.nvim",
       cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
     },
-    -- {
-    --   "neovim/nvim-lspconfig",
-    --   opts = {
-    --     servers = { eslint = {} },
-    --     setup = {
-    --       eslint = function()
-    --         require("lazyvim.util").lsp.on_attach(function(client)
-    --           if client.name == "eslint" then
-    --             client.server_capabilities.documentFormattingProvider = true
-    --           elseif client.name == "tsserver" then
-    --             client.server_capabilities.documentFormattingProvider = false
-    --           end
-    --         end)
-    --       end,
-    --     },
-    --   },
-    -- },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -90,7 +73,6 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  --install = { colorscheme = { "tokyonight", "habamax" } },
   install = { colorscheme = { "catppuccin" } },
 
   checker = {
