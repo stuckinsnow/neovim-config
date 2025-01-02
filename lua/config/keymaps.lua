@@ -43,8 +43,8 @@ vim.api.nvim_set_keymap("n", "<M-Down>", ":m .+1<CR>", { noremap = true, silent 
 
 -- Move multiple line up and down
 
-vim.api.nvim_set_keymap("v", "j", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "k", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "A-j", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "A-k", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 -- Duplicate the current line (Shift + Up Arrow)
 vim.api.nvim_set_keymap("n", "<S-Up>", "Yp", { noremap = true, silent = true })
@@ -82,7 +82,7 @@ vim.keymap.set("n", "<leader>gq", ":DiffviewClose<CR>", { desc = "Close Diffview
 vim.keymap.set("n", "<leader>gf", ":DiffviewToggleFiles<CR>", { desc = "Toggle Diffview Files Panel" })
 vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Diffview Files Panel" })
 
-vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
+-- vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")

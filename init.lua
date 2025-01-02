@@ -30,9 +30,9 @@ require("catppuccin").setup({
 })
 
 -- Load the Catppuccin theme
--- vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin")
 -- Load the tokyonight theme
-vim.cmd.colorscheme("tokyonight")
+-- vim.cmd.colorscheme("tokyonight")
 
 -- vim.o.relativenumber = false
 -- Gitsigns setup directly in the main config
