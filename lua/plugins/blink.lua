@@ -16,6 +16,17 @@ return {
           enabled = false,
         },
       },
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer", "copilot" },
+        providers = {
+          copilot = {
+            name = "copilot",
+            module = "blink-cmp-copilot",
+            score_offset = -1,
+            async = true,
+          },
+        },
+      },
 
       keymap = {
         preset = "super-tab",
