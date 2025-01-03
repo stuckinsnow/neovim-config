@@ -8,8 +8,8 @@ local rainbow_colors = {
   colors.green,
   colors.blue,
   colors.teal,
-  colors.flamingo,
   colors.lavender,
+  colors.mauve,
   colors.pink,
   colors.surface2,
 }
@@ -22,10 +22,10 @@ local digit_highlights_ranges = {
   { fg = colors.yellow },
   { fg = colors.green },
   { fg = colors.blue },
-  { fg = colors.teal },
   { fg = colors.lavender },
+  { fg = colors.mauve },
+  { fg = colors.pink },
   { fg = colors.surface2 },
-  { fg = colors.flamingo },
 }
 
 -- Apply highlights for each color range
@@ -48,7 +48,7 @@ local function colorize_number(number, is_relative)
 
   -- Determine the range for the first digit (using rainbow colors)
   local num_value = math.abs(number)
-  local range_index = math.floor((num_value - 1) / 10) + 1
+  local range_index = math.floor(num_value / 10) + 1
   local highlight_group = "DigitRange" .. range_index
 
   if is_relative then

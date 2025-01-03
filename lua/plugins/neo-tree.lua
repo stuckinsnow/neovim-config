@@ -5,6 +5,9 @@ return {
       indent = {
         with_markers = false,
       },
+      name = {
+        highlight = "NeoTreeFileName",
+      },
     },
     filesystem = {
       filtered_items = {
@@ -30,4 +33,9 @@ return {
       },
     },
   },
+  config = function()
+    vim.cmd([[
+      highlight NeoTreeFileName guifg=#a6adc8
+    ]])
+  end,
 }

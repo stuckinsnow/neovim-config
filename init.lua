@@ -6,25 +6,27 @@ require("config.lazy")
 
 vim.opt.clipboard = "unnamedplus"
 
-require("tokyonight").setup({
-  style = "storm",
-  on_highlights = function(hl, c)
-    hl.LineNrAbove = {
-      fg = c.green,
-    }
-    hl.LineNrBelow = {
-      fg = c.red,
-    }
-  end,
-})
+-- require("tokyonight").setup({
+--   style = "storm",
+--   on_highlights = function(hl, c)
+--     hl.LineNrAbove = {
+--       fg = c.green,
+--     }
+--     hl.LineNrBelow = {
+--       fg = c.red,
+--     }
+--   end,
+-- })
 
 -- Configure Catppuccin theme
 require("catppuccin").setup({
   flavour = "mocha", -- Choose between "latte", "frappe", "macchiato", "mocha"
   custom_highlights = function(colors)
     return {
-      LineNrAbove = { fg = colors.green },
-      LineNrBelow = { fg = colors.red },
+      CursorLineNr = { fg = colors.mauve },
+      -- LineNr = { fg = colors.overlay1 },
+      LineNrAbove = { fg = colors.overlay0 },
+      LineNrBelow = { fg = colors.overlay1 },
     }
   end,
 })
@@ -43,11 +45,11 @@ require("gitsigns").setup({
 vim.opt.fileformats = { "unix" }
 
 -- Set tab size to 4 spaces
--- vim.opt.tabstop = 4 -- Number of spaces a tab represents
--- vim.opt.shiftwidth = 4 -- Number of spaces to use for indentation
--- vim.opt.softtabstop = 4 -- How many spaces to insert when hitting <Tab>
--- vim.opt.expandtab = true -- Convert tabs to spaces
--- vim.opt.smarttab = true -- Use smart tabbing
+vim.opt.tabstop = 4 -- Number of spaces a tab represents
+vim.opt.shiftwidth = 4 -- Number of spaces to use for indentation
+vim.opt.softtabstop = 4 -- How many spaces to insert when hitting <Tab>
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.smarttab = true -- Use smart tabbing
 
 -- vim.g["prettier#config#config"] = {
 --   printWidth = 800, -- Allow longer lines before wrapping
@@ -60,4 +62,4 @@ vim.opt.fileformats = { "unix" }
 
 vim.o.undolevels = 10000
 
-require("config.ui")
+-- require("config.ui")
