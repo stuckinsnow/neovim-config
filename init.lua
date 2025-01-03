@@ -63,3 +63,6 @@ vim.opt.smarttab = true -- Use smart tabbing
 vim.o.undolevels = 10000
 
 -- require("config.ui")
+
+-- Set the highlight for NeoTreeFileName
+vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#bac2de", bg = "#000000", bold = false })
