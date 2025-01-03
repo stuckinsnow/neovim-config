@@ -35,7 +35,7 @@ return {
   },
   config = function()
     vim.cmd([[
-      highlight NeoTreeFileName guifg=#a6adc8
+      highlight NeoTreeFileName guifg=#bac2de	
     ]])
   end,
 }
