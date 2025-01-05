@@ -4,7 +4,6 @@ return {
     default_component_configs = {
       indent = {
         with_markers = false,
-        -- padding = 0,
         -- expander_collapsed = "",
         -- expander_expanded = "",
         expander_collapsed = "",
@@ -44,7 +43,7 @@ return {
       },
       follow_current_file = {
         -- enabled = true,
-        leave_dirs_open = true,
+        leave_dirs_open = false,
       },
     },
   },

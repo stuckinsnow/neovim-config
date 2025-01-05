@@ -81,6 +81,7 @@ vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>", { desc = "Open Diffview" 
 vim.keymap.set("n", "<leader>gq", ":DiffviewClose<CR>", { desc = "Close Diffview" })
 vim.keymap.set("n", "<leader>gf", ":DiffviewToggleFiles<CR>", { desc = "Toggle Diffview Files Panel" })
 vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Diffview Files Panel" })
+vim.keymap.set("n", "<leader>gH", ":DiffviewFileHistory %<CR>", { desc = "Open Diffview File History" })
 
 -- vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
 
