@@ -4,7 +4,7 @@ require("config.lazy")
 -- vim.g.catppuccin_flavour = "mocha"
 -- vim.cmd("colorscheme catppuccin")
 
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamed"
 
 -- require("tokyonight").setup({
 --   style = "storm",
@@ -24,9 +24,9 @@ require("catppuccin").setup({
   custom_highlights = function(colors)
     return {
       CursorLineNr = { fg = colors.mauve },
-      -- LineNr = { fg = colors.overlay1 },
-      LineNrAbove = { fg = colors.overlay0 },
-      LineNrBelow = { fg = colors.overlay1 },
+      LineNr = { fg = colors.overlay1 },
+      -- LineNrAbove = { fg = colors.overlay0 },
+      -- LineNrBelow = { fg = colors.overlay1 },
     }
   end,
 })
@@ -51,16 +51,7 @@ vim.opt.softtabstop = 4 -- How many spaces to insert when hitting <Tab>
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.smarttab = true -- Use smart tabbing
 
--- vim.g["prettier#config#config"] = {
---   printWidth = 800, -- Allow longer lines before wrapping
---   jsxBracketSameLine = true, -- Keep the closing bracket of JSX on the same line
---   importOrderSeparation = false, -- Keep imports on the same line
---   endOfLine = "auto", -- Force LF line endings
---   noTrailingWhitespace = true, -- Prevent trailing whitespace trimming
---   wrapAttributes = "auto",
--- }
-
-vim.o.undolevels = 10000
+vim.o.undolevels = 4000
 
 -- require("config.ui")
 
