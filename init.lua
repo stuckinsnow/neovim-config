@@ -24,9 +24,10 @@ require("catppuccin").setup({
   custom_highlights = function(colors)
     return {
       CursorLineNr = { fg = colors.mauve },
-      LineNr = { fg = colors.overlay1 },
-      -- LineNrAbove = { fg = colors.overlay0 },
-      -- LineNrBelow = { fg = colors.overlay1 },
+      -- LineNr = { fg = "#bac2de" },
+      LineNr = { fg = colors.overlay2 },
+      -- LineNrAbove = { fg = colors.sapphire },
+      -- LineNrBelow = { fg = colors.peach },
     }
   end,
 })

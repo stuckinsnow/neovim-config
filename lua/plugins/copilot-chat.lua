@@ -3,6 +3,7 @@ local IS_DEV = false -- Flag to determine if the environment is development
 -- Table containing various prompt templates for Copilot Chat
 local prompts = {
   BetterNamings = "Please provide better names for the following variables and functions.",
+  Typo = "> /COPILOT_GENERATE\n\nThere's at least one typo in this code, potentially more. Please specify the line numbers for each typo. Do not modify additional code. Simply tell me what line the typos are on, and give me the corrected version below that. Above the line number, tell me what the code was previously and what you changed.",
   Comments = "> /COPILOT_GENERATE\n\nPlease provide comments for the following code. Include a block at the top, with a brief explanation and smaller comments by functions.",
   Concerns = "> /COPILOT_GENERATE\n\nThere are potentially concerns with this code e.g. efficiency or security, etc. Please label them in a concise way, and mention alternatives. If it involves algorithms, please mention alternative more efficient algorithms or functions from a speed perspective. Include the line numbers for each.",
   Concise = "> /COPILOT_GENERATE\n\nPlease make the selected code more concise e.g. turn into a ternary or switch statement.",
