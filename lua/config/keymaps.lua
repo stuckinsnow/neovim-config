@@ -35,6 +35,15 @@ map("n", "<F3>", ":vsplit<CR>", opts)
 -- F3: Split the window horizontally
 map("n", "<F4>", ":split<CR>", opts)
 
+-- Cycle buffers
+vim.api.nvim_set_keymap("n", "<leader>b[", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b]", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<leader>b1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b2", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b3", ":BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b4", ":BufferLineGoToBuffer 4<CR>", { noremap = true, silent = true })
+
 -- Move line up (Alt + Up Arrow)
 vim.api.nvim_set_keymap("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = true })
 
@@ -42,7 +51,6 @@ vim.api.nvim_set_keymap("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = 
 vim.api.nvim_set_keymap("n", "<M-Down>", ":m .+1<CR>", { noremap = true, silent = true })
 
 -- Move multiple line up and down
-
 vim.api.nvim_set_keymap("v", "A-j", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "A-k", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
