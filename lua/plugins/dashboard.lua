@@ -88,6 +88,12 @@ return {
           action = "Lazy update",
           key = "u",
         },
+        {
+          desc = "󰊳 Mason",
+          group = "@property",
+          action = "Mason",
+          key = "m",
+        },
       }
       opts.config.footer = { "" }
     end,
