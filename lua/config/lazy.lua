@@ -25,7 +25,16 @@ require("lazy").setup({
     {
       "petertriho/nvim-scrollbar",
       config = function()
-        require("scrollbar").setup()
+        require("scrollbar").setup({
+          handlers = {
+            cursor = true,
+            diagnostic = true,
+            gitsigns = true, -- Requires gitsigns
+            handle = true,
+            search = true, -- Requires hlslens
+            ale = false, -- Requires ALE
+          },
+        })
       end,
     },
     {
@@ -59,10 +68,11 @@ require("lazy").setup({
     --   },
     --   config = true,
     -- },
-    {
-      "sindrets/diffview.nvim",
-      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-    },
+    -- {
+    --   "sindrets/diffview.nvim",
+    --   cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+    -- },
+    { "kevinhwang91/nvim-hlslens" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.

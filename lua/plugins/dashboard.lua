@@ -11,7 +11,8 @@ return {
 ██║  ██║█████╗  ██║   ██║██████╔╝███████║██║  ██║   ██╔██╗ ██║█████╗     ██║   
 ██║  ██║██╔══╝  ╚██╗ ██╔╝██╔═══╝ ██╔══██║██║  ██║   ██║╚██╗██║██╔══╝     ██║   
 ██████╔╝███████╗ ╚████╔╝ ██║     ██║  ██║██████╔╝██╗██║ ╚████║███████╗   ██║   
-╚═════╝ ╚══════╝  ╚═══╝  ╚═╝     ╚═╝  ╚═╝╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝    
+╚═════╝ ╚══════╝  ╚═══╝  ╚═╝     ╚═╝  ╚═╝╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   
+                                                                               
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -24,12 +25,6 @@ return {
           icon = " ",
           key = "c",
         },
-        -- {
-        --   action = "ene | startinsert",
-        --   desc = " New File",
-        --   icon = " ",
-        --   key = "n",
-        -- },
         {
           action = 'lua LazyVim.pick("oldfiles")()',
           desc = " Recent Files",
@@ -42,19 +37,18 @@ return {
           icon = " ",
           key = "f",
         },
-        -- {
-        --   icon = " ",
-        --   icon_hl = "@variable",
-        --   desc = "Files",
-        --   group = "Label",
-        --   action = "Telescope find_files",
-        --   key = "f",
-        -- },
+
         {
           action = "Telescope live_grep",
           desc = " Find Text",
           icon = " ",
           key = "g",
+        },
+        {
+          action = 'lua require("persistence").load()',
+          desc = " Restore Session",
+          icon = " ",
+          key = "r",
         },
         {
           action = "Lazy",
@@ -68,20 +62,6 @@ return {
           icon = " ",
           key = "x",
         },
-        -- {
-        --   action = 'lua require("persistence").load()',
-        --   desc = " Restore Session",
-        --   icon = " ",
-        --   key = "s",
-        -- },
-        -- {
-        --   action = function()
-        --     vim.api.nvim_input("<cmd>qa<cr>")
-        --   end,
-        --   desc = " Quit",
-        --   icon = " ",
-        --   key = "q",
-        -- },
         {
           desc = "󰊳 Update",
           group = "@property",

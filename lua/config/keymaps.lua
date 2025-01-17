@@ -76,8 +76,8 @@ comment.setup({
   pre_hook = ts_context_commentstring.create_pre_hook(),
 })
 
-vim.keymap.set("n", "<C-S-/>", "gcc", { remap = true, desc = "Toggle line comment" })
-vim.keymap.set("v", "<C-S-/>", "gc", { remap = true, desc = "Toggle comment in selection" })
+vim.keymap.set("n", "<C-/>", "gcc", { remap = true, desc = "Toggle line comment" })
+vim.keymap.set("v", "<C-/>", "gc", { remap = true, desc = "Toggle comment in selection" })
 
 -- Shift + Delete in insert mode: exit to normal mode, delete the line, and re-enter insert mode
 vim.keymap.set("i", "<S-Del>", "<Esc>ddi", { desc = "Delete line and stay in insert mode" })
