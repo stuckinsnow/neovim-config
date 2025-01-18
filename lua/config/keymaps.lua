@@ -105,3 +105,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-9>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("x", "<C-9>", [["hy:%s/\V<C-r>h//gI<Left><Left><Left>]])
 vim.keymap.set("x", "<C-0>", [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]])
+
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])

@@ -4,3 +4,4 @@
 
 vim.g.ai_cmp = true
 vim.g.snacks_animate = false
+vim.opt.clipboard = ""
