@@ -1,11 +1,6 @@
 --- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- vim.g.catppuccin_flavour = "mocha"
--- vim.cmd("colorscheme catppuccin")
-
-vim.opt.clipboard = "unnamed"
-
 -- require("tokyonight").setup({
 --   style = "storm",
 --   on_highlights = function(hl, c)
@@ -25,19 +20,19 @@ require("catppuccin").setup({
     return {
       CursorLineNr = { fg = colors.mauve },
       -- LineNr = { fg = "#bac2de" },
-      LineNr = { fg = colors.overlay2 },
-      -- LineNrAbove = { fg = colors.sapphire },
-      -- LineNrBelow = { fg = colors.peach },
+      LineNr = { fg = colors.overlay0 },
+      -- LineNrAbove = { fg = colors.overlay0 },
+      -- LineNrBelow = { fg = colors.overlay2 },
     }
   end,
 })
 
 -- Load the Catppuccin theme
+-- vim.g.catppuccin_flavour = "mocha"
 vim.cmd.colorscheme("catppuccin")
 -- Load the tokyonight theme
 -- vim.cmd.colorscheme("tokyonight")
 
--- vim.o.relativenumber = false
 -- Gitsigns setup directly in the main config
 require("gitsigns").setup({
   current_line_blame = true, -- Enable blame on the current line by default
@@ -54,6 +49,7 @@ vim.opt.smarttab = true -- Use smart tabbing
 
 vim.o.undolevels = 4000
 
+require("config.ui-2")
 -- require("config.ui")
 require("config.bufferline")
 
