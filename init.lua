@@ -20,7 +20,8 @@ require("catppuccin").setup({
     return {
       CursorLineNr = { fg = colors.mauve },
       -- LineNr = { fg = "#bac2de" },
-      LineNr = { fg = colors.overlay0 },
+      LineNr = { fg = "#535363" },
+      -- LineNr = { fg = colors.overlay0 },
       -- LineNrAbove = { fg = colors.overlay0 },
       -- LineNrBelow = { fg = colors.overlay2 },
     }
