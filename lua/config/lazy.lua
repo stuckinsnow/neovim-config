@@ -29,7 +29,7 @@ require("lazy").setup({
           handlers = {
             cursor = true,
             diagnostic = true,
-            gitsigns = true, -- Requires gitsigns
+            gitsigns = false, -- Requires gitsigns
             handle = true,
             search = true, -- Requires hlslens
             ale = false, -- Requires ALE

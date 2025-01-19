@@ -30,7 +30,7 @@ map("n", "<F2>", "", {
 })
 
 -- F2: Split the window vertically
-map("n", "<F3>", ":vsplit<CR>", opts)
+map("n", "<F3>", ":vsplit<CR>:vertical resize 100<CR>", opts)
 
 -- F3: Split the window horizontally
 map("n", "<F4>", ":split<CR>", opts)

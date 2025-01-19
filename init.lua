@@ -22,8 +22,8 @@ require("catppuccin").setup({
       -- LineNr = { fg = "#bac2de" },
       -- LineNr = { fg = "#535363" },
       -- LineNr = { fg = colors.overlay0 },
-      LineNrAbove = { fg = colors.overlay1 },
-      LineNrBelow = { fg = colors.overlay1 },
+      LineNrAbove = { fg = colors.overlay2 },
+      LineNrBelow = { fg = colors.overlay2 },
     }
   end,
 })
@@ -50,8 +50,8 @@ vim.opt.smarttab = true -- Use smart tabbing
 
 vim.o.undolevels = 4000
 
-require("config.ui-2")
--- require("config.ui")
+-- require("config.ui-2")
+require("config.ui")
 require("config.bufferline")
 
 -- Set the highlight for NeoTreeFileName
