@@ -53,7 +53,7 @@ require("lazy").setup({
       "gbprod/yanky.nvim",
       opts = {
         system_clipboard = {
-          sync_with_ring = false, -- Disable syncing with the system clipboard
+          sync_with_ring = false,
         },
       },
     },
