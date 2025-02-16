@@ -70,6 +70,8 @@ vim.keymap.set("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-Down>", ":m .+1<CR>", { noremap = true, silent = true })
 
 -- Move multiple line up and down
+-- A couple of commands were taken from the primeagens config
+-- You can watch his youtube at https://www.youtube.com/@ThePrimeTimeagen
 vim.keymap.set("v", "A-j", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "A-k", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
