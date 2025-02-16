@@ -1,3 +1,6 @@
+-- Convert line numbers into a rainbow
+-- Please credit if you use it
+
 local colors = require("catppuccin.palettes").get_palette("mocha")
 
 -- Define the rainbow colors for the first digit, and range colors for others
