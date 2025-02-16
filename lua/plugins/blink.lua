@@ -4,7 +4,7 @@ return {
     opts = {
       completion = {
         ghost_text = {
-          enabled = true,
+          enabled = false,
         },
       },
       sources = {
