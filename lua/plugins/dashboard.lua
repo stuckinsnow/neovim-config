@@ -2,7 +2,6 @@ return {
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
-
     opts = function(_, opts)
       local logo = [[
 
@@ -17,6 +16,7 @@ return {
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"
       opts.config.header = vim.split(logo, "\n")
+      -- themes available are hyper and doom
       opts.theme = "hyper"
       opts.config.shortcut = {
         {
@@ -29,7 +29,7 @@ return {
           action = 'lua LazyVim.pick("oldfiles")()',
           desc = " Recent Files",
           icon = " ",
-          key = "r",
+          key = "R",
         },
         {
           action = "lua LazyVim.pick()()",
@@ -37,13 +37,12 @@ return {
           icon = " ",
           key = "f",
         },
-
-        {
-          action = "Telescope live_grep",
-          desc = " Find Text",
-          icon = " ",
-          key = "g",
-        },
+        -- {
+        --   action = "Telescope live_grep",
+        --   desc = " Find Text",
+        --   icon = " ",
+        --   key = "g",
+        -- },
         {
           action = 'lua require("persistence").load()',
           desc = " Restore Session",

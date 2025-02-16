@@ -1,35 +1,30 @@
 return {
   {
     "saghen/blink.cmp",
-    version = not vim.g.lazyvim_blink_main and "*",
-    build = vim.g.lazyvim_blink_main and "cargo build --release",
-    opts_extend = {
-      "sources.completion.enabled_providers",
-      "sources.compat",
-      "sources.default",
-    },
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
     opts = {
       completion = {
         ghost_text = {
-          enabled = false,
+          enabled = true,
         },
       },
       sources = {
-        default = { "lsp", "path", "snippets", "buffer", "copilot" },
         providers = {
+          snippets = {
+            score_offset = 6,
+          },
+          lsp = {
+            score_offset = 2,
+          },
           copilot = {
             name = "copilot",
             module = "blink-cmp-copilot",
-            score_offset = -1,
+            score_offset = 0,
             async = true,
           },
         },
       },
-
       keymap = {
-        preset = "enter",
+        preset = "super-tab",
         -- ["<C-y>"] = { "select_and_accept" },
       },
     },

@@ -12,18 +12,17 @@ require("config.lazy")
 --     }
 --   end,
 -- })
-
 -- Configure Catppuccin theme
 require("catppuccin").setup({
   flavour = "mocha", -- Choose between "latte", "frappe", "macchiato", "mocha"
   custom_highlights = function(colors)
     return {
       CursorLineNr = { fg = colors.mauve },
-      -- LineNr = { fg = "#bac2de" },
-      -- LineNr = { fg = "#535363" },
       -- LineNr = { fg = colors.overlay0 },
-      LineNrAbove = { fg = colors.overlay1 },
-      LineNrBelow = { fg = colors.overlay1 },
+      -- LineNrAbove = { fg = colors.overlay1 },
+      LineNrAbove = { fg = colors.red },
+      -- LineNrBelow = { fg = colors.overlay1 },
+      LineNrBelow = { fg = colors.green },
     }
   end,
 })
@@ -54,5 +53,5 @@ require("config.ui-2")
 -- require("config.ui")
 require("config.bufferline")
 
--- Set the highlight for NeoTreeFileName
-vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#bac2de", bg = "", bold = false })
+-- -- Set the highlight for NeoTreeFileName
+-- vim.api.nvim_set_hl(0, "NeoTreeFileName", { fg = "#bac2de", bg = "", bold = false })

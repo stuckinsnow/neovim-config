@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = false,
   opts = {
     default_component_configs = {
       indent = {
@@ -43,7 +44,7 @@ return {
       },
       follow_current_file = {
         -- enabled = true,
-        leave_dirs_open = true,
+        leave_dirs_open = false,
       },
     },
   },

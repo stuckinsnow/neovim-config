@@ -43,12 +43,12 @@ require("lazy").setup({
         -- Emmet-vim configuration (if necessary)
       end,
     },
-    -- {
-    --   "rcarriga/nvim-notify",
-    --   opts = {
-    --     timeout = 10000,
-    --   },
-    -- },
+    {
+      "rcarriga/nvim-notify",
+      opts = {
+        timeout = 10000,
+      },
+    },
     {
       "gbprod/yanky.nvim",
       opts = {
@@ -76,10 +76,19 @@ require("lazy").setup({
     --   },
     --   config = true,
     -- },
-    -- {
-    --   "sindrets/diffview.nvim",
-    --   cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
-    -- },
+    {
+      "sindrets/diffview.nvim",
+      cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+    },
+    {
+      "folke/snacks.nvim",
+      disable = true,
+      opts = {
+        scroll = {
+          enabled = false, -- Disables smooth scrolling
+        },
+      },
+    },
     { "kevinhwang91/nvim-hlslens" },
   },
   defaults = {
