@@ -38,16 +38,14 @@ vim.keymap.set("n", "<F3>", ":vsplit<CR><C-w>=", opts)
 vim.keymap.set("n", "<F4>", ":split<CR>", opts)
 
 -- Cycle buffers
-vim.keymap.set("n", "<leader>b[", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-s>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b]", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-f>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<M-S>", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-F>", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<M-Left>", ":BufferLineMovePrev<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-Right>", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-h>", ":BufferLineMovePrev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-l>", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>b1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>b2", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
@@ -70,8 +68,6 @@ vim.keymap.set("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-Down>", ":m .+1<CR>", { noremap = true, silent = true })
 
 -- Move multiple line up and down
--- A couple of commands were taken from the primeagens config
--- You can watch his youtube at https://www.youtube.com/@ThePrimeTimeagen
 vim.keymap.set("v", "A-j", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "A-k", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
@@ -82,7 +78,7 @@ vim.keymap.set("n", "<S-Down>", "Yp", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fa", ":wa<CR>", { noremap = true, silent = true, desc = "Write All Files" })
 
 -- Press Ctrl + 8 to format the document
-vim.keymap.set("n", "<C-8>", ":normal! gg=G<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-8>", ":normal! gg=G<CR>", { noremap = true, silent = true })
 
 -- Press Del to delete the character under the cursor without yanking
 vim.keymap.set("n", "<Del>", '"_x', { noremap = true, silent = true })
@@ -130,10 +126,49 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Popups
+local noice = require("noice")
+
+-- Show the RAM usage and GPU temperature
+
+vim.keymap.set("n", "<C-8>", function()
+  local gpu_temp_cmd = "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits"
+  local gpu_temp = io.popen(gpu_temp_cmd):read("*a"):gsub("\n", "") -- Get GPU temperature
+  gpu_temp = "GPU Temp: " .. gpu_temp .. "°C"
+
+  local ram_cmd =
+    "free -k | awk '/Mem:/ {total=$2; available=$7; used=total-available; percent_used=(used/total)*100; printf \"%.2f%%\", percent_used}'"
+  local ram_usage = io.popen(ram_cmd):read("*a"):gsub("\n", "") -- Get RAM usage percentage
+  ram_usage = "RAM Usage: " .. ram_usage
+
+  local moods = {
+    "😃 Happy!",
+    "😴 Sleepy...",
+    "🤔 Thinking...",
+    "😎 Cool!",
+    "🥳 Party time!",
+    "😱 Surprised!",
+    "😂 Laughing!",
+    "🤖 Beep boop!",
+    "🔥 On fire!",
+  }
+
+  local mood = moods[math.random(#moods)]
+  noice.notify(gpu_temp .. "\n" .. ram_usage .. "\n" .. mood, "success") -- Options: "success", "info", "warn", "error"
+end, { silent = true })
+
 -- Replace line with the content of the register
 vim.keymap.set("n", "<C-9>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("x", "<C-9>", [["hy:%s/\V<C-r>h//gI<Left><Left><Left>]])
 vim.keymap.set("x", "<C-0>", [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]])
+
+-- vim.keymap.set("x", "<leader>r9", [["hy:%s/\V<C-r>h//gI<Left><Left><Left>]], { desc = "Replace occurrences" })
+-- vim.keymap.set(
+--   "x",
+--   "<leader>r0",
+--   [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]],
+--   { desc = "Replace occurrences in the next lines" }
+-- )
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
@@ -152,3 +187,14 @@ vim.keymap.set("i", "<Home>", toggle_home, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<S-End>", "v$", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-Home>", "v0", { noremap = true, silent = true })
+
+-- Start to create new file at current buffer location
+vim.keymap.set("n", "<leader>fnn", ":e %:h/", { desc = "New File At Buffer Location", noremap = true, silent = false })
+
+-- Start to create a new folder at current buffer location
+vim.keymap.set(
+  "n",
+  "<leader>fnf",
+  ":!mkdir -p %:h/",
+  { desc = "New Folder At Buffer Location", noremap = true, silent = false }
+)

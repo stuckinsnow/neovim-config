@@ -29,7 +29,7 @@ require("lazy").setup({
           handlers = {
             cursor = true,
             diagnostic = true,
-            gitsigns = false, -- Requires gitsigns
+            gitsigns = true, -- Requires gitsigns
             handle = true,
             search = true, -- Requires hlslens
             ale = false, -- Requires ALE
@@ -42,12 +42,6 @@ require("lazy").setup({
       config = function()
         -- Emmet-vim configuration (if necessary)
       end,
-    },
-    {
-      "rcarriga/nvim-notify",
-      opts = {
-        timeout = 10000,
-      },
     },
     {
       "gbprod/yanky.nvim",
@@ -63,27 +57,17 @@ require("lazy").setup({
         inlay_hints = { enabled = false },
       },
     },
-    -- {
-    --   "NeogitOrg/neogit",
-    --   dependencies = {
-    --     "nvim-lua/plenary.nvim", -- required
-    --     "sindrets/diffview.nvim", -- optional - Diff integration
-    --
-    --     -- Only one of these is needed.
-    --     "nvim-telescope/telescope.nvim", -- optional
-    --     "ibhagwan/fzf-lua", -- optional
-    --     "echasnovski/mini.pick", -- optional
-    --   },
-    --   config = true,
-    -- },
     {
       "sindrets/diffview.nvim",
       cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
     },
     {
       "folke/snacks.nvim",
-      disable = true,
+      disable = false,
       opts = {
+        terminal = {
+          enabled = false,
+        },
         scroll = {
           enabled = false, -- Disables smooth scrolling
         },

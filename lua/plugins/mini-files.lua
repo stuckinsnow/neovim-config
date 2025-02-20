@@ -1,6 +1,6 @@
--- This file was taken from https://github.com/MariaSolOs
+-- This file was edited from https://github.com/MariaSolOs
 -- https://github.com/MariaSolOs/dotfiles/tree/main/.config/nvim
--- Please credit if you use it
+-- Please credit her if you use it
 
 local function map_split(buf_id, lhs, direction)
   local minifiles = require("mini.files")
@@ -33,11 +33,14 @@ end
 return {
   {
     "echasnovski/mini.files",
-    lazy = false,
     enabled = true,
+    lazy = false,
+
+    -- Change mappings compared to the original config, by showing the cwd on launch
+
     keys = {
       {
-        "<leader>e",
+        "<leader>E",
         function()
           local bufname = vim.api.nvim_buf_get_name(0)
           local path = vim.fn.fnamemodify(bufname, ":p")
@@ -49,13 +52,33 @@ return {
         end,
         desc = "File explorer",
       },
+
+      -- show cwd on launch
+
+      {
+        "<leader>e",
+        function()
+          local bufname = vim.api.nvim_buf_get_name(0)
+          local path = vim.fn.fnamemodify(bufname, ":p:h")
+
+          -- Noop if the buffer isn't valid.
+          if path and vim.uv.fs_stat(path) then
+            require("mini.files").open(bufname, false)
+            require("mini.files").reveal_cwd()
+          end
+        end,
+        desc = "File explorer",
+      },
     },
+
     opts = {
       mappings = {
+        -- reveal_cwd = "E",
         show_help = "?",
         go_in_plus = "<cr>",
         go_out_plus = "<tab>",
       },
+
       content = {
         filter = function(entry)
           return entry.fs_type ~= "file" or entry.name ~= ".DS_Store"
@@ -102,7 +125,7 @@ return {
       },
       windows = { width_nofocus = 25 },
       -- Move stuff to the minifiles trash instead of it being gone forever.
-      options = { permanent_delete = false },
+      options = { permanent_delete = true },
     },
     config = function(_, opts)
       local minifiles = require("mini.files")
@@ -126,40 +149,6 @@ return {
         end,
       })
 
-      -- HACK: Notify LSPs that a file got renamed.
-      -- Borrowed this from snacks.nvim.
-      vim.api.nvim_create_autocmd("User", {
-        desc = "Notify LSPs that a file was renamed",
-        pattern = "MiniFilesActionRename",
-        callback = function(args)
-          local changes = {
-            files = {
-              {
-                oldUri = vim.uri_from_fname(args.data.from),
-                newUri = vim.uri_from_fname(args.data.to),
-              },
-            },
-          }
-          local will_rename_method, did_rename_method =
-            vim.lsp.protocol.Methods.workspace_willRenameFiles, vim.lsp.protocol.Methods.workspace_didRenameFiles
-          local clients = vim.lsp.get_clients()
-          for _, client in ipairs(clients) do
-            if client:supports_method(will_rename_method) then
-              local res = client:request_sync(will_rename_method, changes, 1000, 0)
-              if res and res.result then
-                vim.lsp.util.apply_workspace_edit(res.result, client.offset_encoding)
-              end
-            end
-          end
-
-          for _, client in ipairs(clients) do
-            if client:supports_method(did_rename_method) then
-              client:notify(did_rename_method, changes)
-            end
-          end
-        end,
-      })
-
       vim.api.nvim_create_autocmd("User", {
         desc = "Add rounded corners to minifiles window",
         pattern = "MiniFilesWindowOpen",
@@ -175,6 +164,13 @@ return {
           local buf_id = args.data.buf_id
           map_split(buf_id, "<C-w>s", "belowright horizontal")
           map_split(buf_id, "<C-w>v", "belowright vertical")
+        end,
+      })
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesActionRename",
+        callback = function(event)
+          Snacks.rename.on_rename_file(event.data.from, event.data.to)
         end,
       })
     end,

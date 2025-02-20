@@ -1,10 +1,15 @@
 return {
   "folke/which-key.nvim",
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
-  opts_extend = { "spec" },
   opts = {
-    preset = "helix",
-    defaults = {},
+    preset = "helix", -- Options include "helix", "classic", "modern"
+    spec = {
+      {
+        mode = { "n", "v" },
+        -- { "<leader>r", group = "replace" },
+        { "<leader>fn", group = "new file/folder" },
+      },
+    },
   },
 }
