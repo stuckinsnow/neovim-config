@@ -29,37 +29,11 @@ vim.keymap.set("n", "<F2>", "", {
 })
 
 -- F3: Split the window vertically
--- vim.keymap.set("n", "<F3>", ":vsplit<CR>:vertical resize 100<CR>", opts)
-
--- F3: Split the window vertically with 50% width
+-- vim.keymap.set("n", "<F3>", ":vsplit<CR>:vertical resize 120<CR>", opts)
 vim.keymap.set("n", "<F3>", ":vsplit<CR><C-w>=", opts)
 
 -- F4: Split the window horizontally
 vim.keymap.set("n", "<F4>", ":split<CR>", opts)
-
--- Cycle buffers
-vim.keymap.set("n", "<M-s>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-f>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<M-S>", ":BufferLineCloseLeft<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-F>", ":BufferLineCloseRight<CR>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<M-h>", ":BufferLineMovePrev<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-l>", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<leader>b1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b2", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b3", ":BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>b4", ":BufferLineGoToBuffer 4<CR>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<M-1>", ":BufferLineGoToBuffer 1<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-2>", ":BufferLineGoToBuffer 2<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-3>", ":BufferLineGoToBuffer 3<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-4>", ":BufferLineGoToBuffer 4<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-5>", ":BufferLineGoToBuffer 5<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-6>", ":BufferLineGoToBuffer 6<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-7>", ":BufferLineGoToBuffer 7<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-8>", ":BufferLineGoToBuffer 8<cr>", { noremap = true, silent = true })
 
 -- Move line up (Alt + Up Arrow)
 vim.keymap.set("n", "<M-Up>", ":m .-2<CR>", { noremap = true, silent = true })
@@ -162,14 +136,6 @@ vim.keymap.set("n", "<C-9>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 vim.keymap.set("x", "<C-9>", [["hy:%s/\V<C-r>h//gI<Left><Left><Left>]])
 vim.keymap.set("x", "<C-0>", [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]])
 
--- vim.keymap.set("x", "<leader>r9", [["hy:%s/\V<C-r>h//gI<Left><Left><Left>]], { desc = "Replace occurrences" })
--- vim.keymap.set(
---   "x",
---   "<leader>r0",
---   [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]],
---   { desc = "Replace occurrences in the next lines" }
--- )
-
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -198,3 +164,11 @@ vim.keymap.set(
   ":!mkdir -p %:h/",
   { desc = "New Folder At Buffer Location", noremap = true, silent = false }
 )
+
+-- fzf lua
+
+vim.keymap.set("n", "<leader>fs", "<cmd>FzfLua live_grep<cr>", { desc = "Find string in cwd" })
+vim.keymap.set("n", "<leader>fos", "<cmd>FzfLua profiles<CR>", { desc = "FzfLua Profiles" })
+vim.keymap.set("n", "<leader>fog", "<cmd>FzfLua grep<CR>", { desc = "Fzf Grep" })
+vim.keymap.set("n", "<leader>foo", "<cmd>FzfLua<CR>", { desc = "Fzf" })
+vim.keymap.set("n", "<leader>foS", "<cmd>FzfLua spell_suggest<CR>", { desc = "Spelling" })

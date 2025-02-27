@@ -3,10 +3,10 @@ return {
   opts = {
     cmdline = {
       -- Options include "cmdline", "cmdline_popup", "popup"
-      view = "cmdline_popup",
+      view = "cmdline",
       format = {
-        search_down = { view = "cmdline_popup" },
-        search_up = { view = "cmdline_popup" },
+        search_down = { view = "cmdline" },
+        search_up = { view = "cmdline" },
       },
     },
     notify = {

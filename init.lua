@@ -2,13 +2,14 @@
 require("config.lazy")
 
 -- require("tokyonight").setup({
---   style = "storm",
+--   style = "night",
+--   transparent = false,
 --   on_highlights = function(hl, c)
 --     hl.LineNrAbove = {
---       fg = c.green,
+--       fg = c.red,
 --     }
 --     hl.LineNrBelow = {
---       fg = c.red,
+--       fg = c.green,
 --     }
 --   end,
 -- })
@@ -19,16 +20,15 @@ require("catppuccin").setup({
     return {
       CursorLineNr = { fg = colors.mauve },
       -- LineNr = { fg = colors.overlay0 },
-      -- LineNrAbove = { fg = colors.overlay1 },
+      -- LineNrAbove = { fg = colors.subtext1 },
       LineNrAbove = { fg = colors.red },
-      -- LineNrBelow = { fg = colors.overlay1 },
+      -- LineNrBelow = { fg = colors.subtext1 },
       LineNrBelow = { fg = colors.green },
     }
   end,
 })
 
 -- Load the Catppuccin theme
--- vim.g.catppuccin_flavour = "mocha"
 vim.cmd.colorscheme("catppuccin")
 -- Load the tokyonight theme
 -- vim.cmd.colorscheme("tokyonight")

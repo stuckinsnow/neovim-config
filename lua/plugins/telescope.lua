@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  enabled = false,
   branch = "0.1.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -13,12 +14,25 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "smart" },
+        file_ignore_patterns = { ".git/", "node_modules", "pnpm-lock" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
             ["<C-j>"] = actions.move_selection_next, -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           },
+        },
+      },
+      pickers = {
+        -- cursor, dropdown and ivy
+        -- live_grep = {
+        --   theme = "dropdown",
+        -- },
+        oldfiles = {
+          theme = "dropdown",
+        },
+        find_files = {
+          theme = "dropdown",
         },
       },
     })
