@@ -1,6 +1,6 @@
 # 💤 LazyVim Config
 
-I have changed the plugins I use, but have kept the old ones as they're a bit opinionated. You may prefer to use neo-tree and telescope, for example. These are still in the config files but have been set to enabled = false.
+I'm new to Lua, so don't trust some of the more complicated files, but maybe it can give you some inspiration if you're new. Some of the plugins are disabled, but I kept the config files for them as it's an opinionated choice. For example, You may prefer to use neo-tree and telescope. Find the line that says `enabled = false`.
 
 ## UI config
 
@@ -17,5 +17,7 @@ Mini-files config was obtained from Maria's config, but has been modified. You c
 Special thanks to theprimeagen, maria, and typecraft (I may have forgotten some people). Their advice & config files have been tremendously helpful to me:
 
 <https://github.com/ThePrimeagen/>
+
 <https://github.com/MariaSolOs>
+
 <https://github.com/typecraft-dev>
