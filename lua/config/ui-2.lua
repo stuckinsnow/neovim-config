@@ -1,3 +1,7 @@
+-- This disables relative line numbers on the inactive buffer
+-- Please credit if you use
+-- https://github.com/stuckinsnow
+
 -- Enable the custom StatusColumn for all buffers except Neo-tree
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "minifiles",

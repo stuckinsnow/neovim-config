@@ -1,3 +1,7 @@
+-- This enables rainbow coloured line numbers, and disables relative line numbers on the inactive buffer
+-- Please credit if you use
+-- https://github.com/stuckinsnow
+
 local colors = require("catppuccin.palettes").get_palette("mocha")
 
 -- Define the rainbow colors for the first digit, and range colors for others
