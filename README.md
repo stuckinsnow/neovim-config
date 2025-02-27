@@ -11,3 +11,11 @@ You can switch ui files easily in init.lua; similarly, I have commented out code
 ## Mini-files
 
 Mini-files config was obtained from Maria's config, but has been modified. You can now press "<leader>e" to see a tree view structure, press it again to go to the root dir.
+
+## Thank you
+
+Special thanks to theprimeagen, maria, and typecraft (I may have forgotten some people). Their advice & config files have been tremendously helpful to me:
+
+<https://github.com/ThePrimeagen/>
+<https://github.com/MariaSolOs>
+<https://github.com/typecraft-dev>
