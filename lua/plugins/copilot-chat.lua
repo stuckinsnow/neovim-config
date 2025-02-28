@@ -12,7 +12,6 @@ local prompts = {
   },
   Fix = {
     prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please fix the following code.",
-    system_prompt = "You are a senior developer, with years of experience developing and in devops. Please fix the following code",
     mapping = "<leader>acf",
     description = "CopilotChat - Fix Code",
   },
@@ -20,7 +19,7 @@ local prompts = {
     prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please review the following code and provide suggestions for improvement.",
   },
   Help = {
-    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please help me, I will explain my problem below.",
+    prompt = "You are a senior developer, with years of experience developing and in devops. Please help me, I will explain my problem below.",
   },
 }
 
@@ -28,7 +27,7 @@ return {
   {
     dir = IS_DEV and "~/Projects/research/CopilotChat.nvim" or nil,
     "CopilotC-Nvim/CopilotChat.nvim",
-    -- version = "3.6.0",
+    version = "3.6.0",
     dependencies = {
       { "nvim-telescope/telescope.nvim" },
       { "nvim-lua/plenary.nvim" },

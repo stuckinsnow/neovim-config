@@ -91,6 +91,10 @@ vim.keymap.set("n", "<leader>gf", ":DiffviewToggleFiles<CR>", { desc = "Toggle D
 vim.keymap.set("n", "<leader>gF", ":DiffviewFocusFiles<CR>", { desc = "Focus Diffview Files Panel" })
 vim.keymap.set("n", "<leader>gH", ":DiffviewFileHistory %<CR>", { desc = "Open Diffview File History" })
 
+-- Open git log using fzf lua
+vim.keymap.del("n", "<leader>gc")
+vim.keymap.set("n", "<leader>gL", "<cmd>FzfLua git_commits<CR>", { desc = "Git Log - fzf" })
+
 -- vim.keymap.set("n", "<leader>gn", ":Neogit<CR>", { desc = "Open Neogit" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
@@ -138,6 +142,7 @@ vim.keymap.set("x", "<C-0>", [["hy:'<,'>+10s/\V<C-r>h//gI<Left><Left><Left>]])
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("x", "<leader>rp", [["_dP]])
 
 local function toggle_home()
   local current_col = vim.fn.col(".")

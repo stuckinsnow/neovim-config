@@ -63,7 +63,6 @@ require("lazy").setup({
     },
     {
       "folke/snacks.nvim",
-      disable = false,
       opts = {
         terminal = {
           enabled = false,

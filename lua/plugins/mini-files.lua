@@ -1,6 +1,5 @@
--- This file was edited from https://github.com/MariaSolOs
--- https://github.com/MariaSolOs/dotfiles/tree/main/.config/nvim
--- Please credit her if you use it
+-- Original file taken from Maria's config, please credit her if you use it
+-- You can see the original at github.com/MariaSolOs
 
 local function map_split(buf_id, lhs, direction)
   local minifiles = require("mini.files")
