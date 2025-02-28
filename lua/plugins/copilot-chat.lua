@@ -1,17 +1,27 @@
 local IS_DEV = false -- Flag to determine if the environment is development
 
 local prompts = {
-  Typo = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. There's at least one typo in this code. Please specify the line numbers for each typo. Do not modify additional code. Simply tell me what line the typos are on, and give me the corrected code. Only supply the correct lines, not the entire code. Above that, tell me what the code was previously and what you changed.",
-  Comments = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please provide comments for the following code. Include a block at the top, with a brief explanation and smaller comments by functions.",
-  Explain = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please explain how the following code works.",
+  Typo = {
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. There's at least one typo in this code. Please specify the line numbers for each typo. Do not modify additional code. Simply tell me what line the typos are on, and give me the corrected code. Only supply the correct lines, not the entire code. Above that, tell me what the code was previously and what you changed.",
+  },
+  Comments = {
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please provide comments for the following code. Include a block at the top, with a brief explanation and smaller comments by functions.",
+  },
+  Explain = {
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please explain how the following code works.",
+  },
   Fix = {
     prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please fix the following code.",
     system_prompt = "You are a senior developer, with years of experience developing and in devops. Please fix the following code",
     mapping = "<leader>acf",
     description = "CopilotChat - Fix Code",
   },
-  Review = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please review the following code and provide suggestions for improvement.",
-  Help = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please help me, I will explain my problem below.",
+  Review = {
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please review the following code and provide suggestions for improvement.",
+  },
+  Help = {
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please help me, I will explain my problem below.",
+  },
 }
 
 return {
