@@ -9,7 +9,9 @@ return {
       },
       sources = {
         providers = {
-          buffer = { enabled = false },
+          buffer = { 
+            enabled = false 
+          },
           snippets = {
             score_offset = 6,
           },
