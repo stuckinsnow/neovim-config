@@ -67,6 +67,32 @@ require("lazy").setup({
         terminal = {
           enabled = false,
         },
+        indent = {
+          animate = {
+            style = "down", -- "out", "up_down", "down", "up"
+          },
+          enabled = true,
+          indent = {
+            enabled = false,
+            -- only_scope = true,
+            -- only_current = true,
+            -- hl = {
+            --   "SnacksIndent1",
+            --   "SnacksIndent2",
+            --   "SnacksIndent3",
+            --   "SnacksIndent4",
+            --   "SnacksIndent5",
+            --   "SnacksIndent6",
+            --   "SnacksIndent7",
+            --   "SnacksIndent8",
+            -- },
+          },
+          scope = {
+            enabled = true,
+            hl = "SnacksIndentScope",
+            -- hl = "SnacksIndent5",
+          },
+        },
         scroll = {
           enabled = false, -- Disables smooth scrolling
         },
@@ -88,7 +114,7 @@ require("lazy").setup({
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins

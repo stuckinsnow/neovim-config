@@ -41,15 +41,14 @@ return {
       {
         "<leader>E",
         function()
-          local bufname = vim.api.nvim_buf_get_name(0)
-          local path = vim.fn.fnamemodify(bufname, ":p")
+          local root_dir = vim.fn.getcwd()
 
-          -- Noop if the buffer isn't valid.
-          if path and vim.uv.fs_stat(path) then
-            require("mini.files").open(bufname, false)
+          -- Noop if the root directory isn't valid.
+          if vim.uv.fs_stat(root_dir) then
+            require("mini.files").open(root_dir, false)
           end
         end,
-        desc = "File explorer",
+        desc = "File Explorer (Root Dir)",
       },
 
       -- show cwd on launch
@@ -66,7 +65,7 @@ return {
             require("mini.files").reveal_cwd()
           end
         end,
-        desc = "File explorer",
+        desc = "File Explorer",
       },
     },
 

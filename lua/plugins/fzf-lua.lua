@@ -6,7 +6,7 @@ return {
   -- dependencies = { "echasnovski/mini.icons" },
   config = function()
     require("fzf-lua").setup({
-      "telescope",
+      "default",
       winopts = {
         border = true,
         -- fullscreen = true,

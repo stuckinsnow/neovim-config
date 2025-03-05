@@ -11,7 +11,7 @@ local prompts = {
     prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please explain how the following code works.",
   },
   Fix = {
-    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please fix the following code.",
+    prompt = "> /COPILOT_GENERATE\n\nYou are a senior developer, with years of experience developing and in devops. Please fix the following code. Do not display line numbers.",
     mapping = "<leader>acf",
     description = "CopilotChat - Fix Code",
   },

@@ -37,12 +37,6 @@ return {
           icon = " ",
           key = "f",
         },
-        -- {
-        --   action = "Telescope live_grep",
-        --   desc = " Find Text",
-        --   icon = " ",
-        --   key = "g",
-        -- },
         {
           action = 'lua require("persistence").load()',
           desc = " Restore Session",

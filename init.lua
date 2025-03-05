@@ -2,9 +2,9 @@
 require("config.lazy")
 
 -- require("tokyonight").setup({
---   style = "night",
+--   style = "moon",
 --   transparent = false,
---   on_highlights = function(hl, c)
+-- u on_highlights = function(hl, c)
 --     hl.LineNrAbove = {
 --       fg = c.red,
 --     }
@@ -16,6 +16,12 @@ require("config.lazy")
 -- Configure Catppuccin theme
 require("catppuccin").setup({
   flavour = "mocha", -- Choose between "latte", "frappe", "macchiato", "mocha"
+  integrations = {
+    snacks = {
+      enabled = true,
+      indent_scope_color = "mauve",
+    },
+  },
   custom_highlights = function(colors)
     return {
       CursorLineNr = { fg = colors.mauve },

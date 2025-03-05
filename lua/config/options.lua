@@ -3,6 +3,6 @@
 -- Add any additional options her
 
 vim.g.ai_cmp = true
--- vim.g.snacks_animate = false
+vim.g.snacks_animate = false
 -- vim.g.snacks_scroll = false
 vim.opt.clipboard = ""

@@ -3,7 +3,7 @@ return {
   enabled = true,
   event = "VeryLazy",
   opts = {
-    preset = "helix", -- Options include "helix", "classic", "modern"
+    preset = "modern", -- Options include "helix", "classic", "modern"
     spec = {
       {
         mode = { "n", "v" },
