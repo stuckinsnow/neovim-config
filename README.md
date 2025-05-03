@@ -1,6 +1,8 @@
 # 💤 LazyVim Config
 
-I'm new to Lua, so don't trust some of the more complicated files, but maybe it can give you some inspiration if you're new. Some of the plugins are disabled, but I kept the config files for them as it's an opinionated choice. For example, You may prefer to use neo-tree and telescope. Find the line that says `enabled = false`.
+Note, this is an old config. 
+
+Don't trust some of the more complicated files as I was/am new to Lua, but maybe it can give you some inspiration. Some of the plugins are disabled, but I kept the config files for them as it's an opinionated choice. For example, You may prefer to use neo-tree and telescope. Find the line that says `enabled = false` and change it.
 
 ## UI config
 
