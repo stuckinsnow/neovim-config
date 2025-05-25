@@ -1,14 +1,11 @@
 # 💤 LazyVim Config
 
-Note, this is an old config. 
+Note, this was an old config--my current one is significantly more advanced. I keeping this repo, so I can backup older configuration files in case I revert changes. 
 
-Don't trust some of the more complicated files as I was/am new to Lua, but maybe it can give you some inspiration. Some of the plugins are disabled, but I kept the config files for them as it's an opinionated choice. For example, You may prefer to use neo-tree and telescope. Find the line that says `enabled = false` and change it.
+Don't trust some of the more complicated files as I wa new to Lua, but maybe it can give you some inspiration.  
 
-## UI config
 
-There are two ui files, ui and ui-2; the former converts line numbers to a rainbow colour. The latter disables relative line numbers on the inactive buffer e.g. if you have a split window, the line numbers will be less visible. It's useful if you want to find a line. However, it does not convert line numbers into rainbow colours.
 
-You can switch ui files easily in init.lua; similarly, I have commented out code for tokynight theme. I should remove this altogether, but I am forever undecided with my colour themes!
 
 ## Mini-files
 
