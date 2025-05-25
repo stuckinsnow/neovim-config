@@ -1,11 +1,8 @@
 # 💤 LazyVim Config
 
-Note, this was an old config--my current one is significantly more advanced. I keeping this repo, so I can backup older configuration files in case I revert changes. 
+Note, this was an old config--my current one is significantly more advanced. I am keeping this repo, to make it easier to cherry pick files in case I decide to revert any changes. 
 
 Don't trust some of the more complicated files as I wa new to Lua, but maybe it can give you some inspiration.  
-
-
-
 
 ## Mini-files
 
